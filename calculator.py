@@ -1,5 +1,9 @@
 """CLI application for a prefix-notation calculator."""
-from arithmetic import (add, subtract, multiply, divide, square, cube,
+from functools import reduce
+#reduce(lambda a, b: a+b, lis)
+#reduce(lambda a, b: b = int(b), lis) ???
+
+from arithmetic import (add, add_infinite, subtract, multiply, divide, square, cube,
                         power, mod)
 
 
@@ -14,6 +18,22 @@ while input_string != "q":
     tokens = input_string.split(' ')
     num1 = int(tokens[1])
     num2 = int(tokens[2])
+
+    #store first value of tokens in new variable "command"
+    #command = tokens[0]
+
+    #remove first value from tokens?
+    #tokens.pop(0)
+
+    #convert the rest of the values in tokens into integers
+    #tokens = [int(x) for x in tokens]
+
+    #so now all if statements in the while loop will check what command is
+    #& then they run the now shorter tokens list (of NUMBERS) through the function
+
+    #if command == "pow":
+    #   print(infinite_pow(tokens))
+    #   input_string = input("> ")
 
 #"if the first token is 'q':"
 #"quit"
@@ -40,6 +60,10 @@ while input_string != "q":
     elif tokens[0] == "+":
         print(add(num1, num2))
         input_string = input("> ")
+
+'''    elif tokens[0] == "+":
+        print(add_infinite(tokens))
+        input_string = input("> ")'''
 
     elif tokens[0] == "-":
         print(subtract(num1, num2))

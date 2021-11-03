@@ -1,3 +1,6 @@
+from functools import reduce
+#reduce(lambda a, b: a+b, lis)
+
 """Functions for common math operations."""
 
 def add(num1, num2):
@@ -5,10 +8,16 @@ def add(num1, num2):
 
     return num1 + num2
 
+# def add_infinite(lis):
+#     return reduce(lambda a, b: a+b, lis)
+
 def subtract(num1, num2):
     """Return the second number subtracted from the first."""
     
     return num1 - num2
+
+# def subtract_infinite(lis):
+#     return reduce(lambda a, b: a-b, lis)
 
 def multiply(num1, num2):
     """Multiply the two inputs together."""
